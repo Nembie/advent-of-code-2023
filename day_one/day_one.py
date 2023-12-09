@@ -1,14 +1,16 @@
 import os
 
-# Part 1
-result = 0
+# Read data
 with open(os.path.dirname(__file__) + '/day_one.txt', 'r') as f:
     data = f.read().splitlines()
-    for i in range(len(data)):
-        result += int(
-            str(next((c for c in data[i] if c.isdigit()), ''))
-            + str(next((c for c in data[i][::-1] if c.isdigit()), '')
-        ))
+
+# Part 1
+result = 0
+for i in range(len(data)):
+    result += int(
+        str(next((c for c in data[i] if c.isdigit()), ''))
+        + str(next((c for c in data[i][::-1] if c.isdigit()), '')
+    ))
 
 print(f'Result first part: {result}') # 54239
 
